@@ -64,9 +64,9 @@ printf("ft_printf: %d characters, printf: %d characters\n\n", my_len, orig_len);
 
 return 0;
 }
-*/
 
-/*
+
+
 int main(void)
 {
     int n = 42;
@@ -143,4 +143,4 @@ int main(void)
     printf("\n\n");
     return 0;
 }
-/*
+*/

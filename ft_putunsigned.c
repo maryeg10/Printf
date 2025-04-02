@@ -2,11 +2,11 @@
 
 int	ft_putunsigned(unsigned int n)
 {
-	int	count;
+	int	i;
 
-	count = 0;
+	i = 0;
 	if (n >= 10)
-		count += ft_putunsigned(n / 10);
-	count += ft_putchar(n % 10 + '0');
-	return (count);
+		i += ft_putunsigned(n / 10);
+	i += ft_putchar(n % 10 + '0');
+	return (i);
 }

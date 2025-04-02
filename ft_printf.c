@@ -2,43 +2,43 @@
 
 int	ft_print_arg(char c, va_list args)
 {
-	int	count;
+	int	i;
 
-	count = 0;
+	i = 0;
 	if (c == '%')
-		count += ft_putchar('%');
+		i += ft_putchar('%');
 	else if (c == 'i' || c == 'd')
-		count += ft_putnbr(va_arg(args, int));
+		i += ft_putnbr(va_arg(args, int));
 	else if (c == 's')
-		count += ft_putstr(va_arg(args, char *));
+		i += ft_putstr(va_arg(args, char *));
 	else if (c == 'c')
-		count += ft_putchar(va_arg(args, int));
+		i += ft_putchar(va_arg(args, int));
 	else if (c == 'u')
-		count += ft_putunsigned(va_arg(args, unsigned int));
+		i += ft_putunsigned(va_arg(args, unsigned int));
 	else if (c == 'x')
-		count += ft_put_hex_lower(va_arg(args, unsigned int));
+		i += ft_put_hex_lower(va_arg(args, unsigned int));
 	else if (c == 'X')
-		count += ft_put_hex_upper(va_arg(args, unsigned int));
+		i += ft_put_hex_upper(va_arg(args, unsigned int));
 	else if (c == 'p')
-		count += ft_put_ptr(va_arg(args, void *));
-	return (count);
+		i += ft_put_ptr(va_arg(args, void *));
+	return (i);
 }
 
 int	ft_printf(char const *str, ...)
 {
 	va_list	args;
 	int		total_len;
-	int		counter;
+	int		j;
 
 	total_len = 0;
-	counter = -1;
+	j = -1;
 	va_start(args, str);
-	while (str[++counter])
+	while (str[++j])
 	{
-		if (str[counter] == '%')
-			total_len += ft_print_arg(str[++counter], args);
+		if (str[j] == '%')
+			total_len += ft_print_arg(str[++j], args);
 		else
-			total_len += ft_putchar(str[counter]);
+			total_len += ft_putchar(str[j]);
 	}
 	va_end(args);
 	return (total_len);

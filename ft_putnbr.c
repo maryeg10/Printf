@@ -2,23 +2,23 @@
 
 int	ft_putnbr(int n)
 {
-	int	count;
+	int	i;
 
-	count = 0;
+	i = 0;
 	if (n == -2147483648)
 	{
-		count += ft_putchar('-');
-		count += ft_putchar('2');
-		count += ft_putnbr(147483648);
-		return (count);
+		i += ft_putchar('-');
+		i += ft_putchar('2');
+		i += ft_putnbr(147483648);
+		return (i);
 	}
 	if (n < 0)
 	{
-		count += ft_putchar('-');
+		i += ft_putchar('-');
 		n = -n;
 	}
 	if (n >= 10)
-		count += ft_putnbr(n / 10);
-	count += ft_putchar(n % 10 + '0');
-	return (count);
+		i += ft_putnbr(n / 10);
+	i += ft_putchar(n % 10 + '0');
+	return (i);
 }
