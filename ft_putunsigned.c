@@ -6,7 +6,7 @@ int	ft_putunsigned(unsigned int n)
 
 	i = 0;
 	if (n >= 10)
-		i += ft_putunsigned(n / 10);
-	i += ft_putchar(n % 10 + '0');
+		i = i + ft_putunsigned(n / 10);
+	i = i + ft_putchar(n % 10 + '0');
 	return (i);
 }

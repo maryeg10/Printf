@@ -7,12 +7,12 @@ int	ft_putstr(char *str)
 	i = 0;
 	if (!str)
 	{
-		i += ft_putstr("(null)");
+		i = i + ft_putstr("(null)");
 		return (i);
 	}
 	while (*str)
 	{
-		i += ft_putchar(*str);
+		i = i + ft_putchar(*str);
 		str++;
 	}
 	return (i);
